@@ -1,15 +1,19 @@
 [project]
 version = "0.0.0"
-name = "segformer-quantization-pipeline"
-description = "An end-to-end quantization evaluation pipeline for SegFormer models on semantic segmentation tasks"
+name = "HybridRAG-eval"
+description = "A prototype for evaluating classic RAG against HybridRAG"
 authors = [
     {name = "qte77", email = "qte@77.gh"}
 ]
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "argparse",
     "pydantic==2.10.4",
-    "loguru==0.7.3"
+    "loguru==0.7.3",
+    "faiss-cpu>=1.7.0",
+    "sentence-transformers>=2.2.0",
+    # "openai>=0.27.0",
 ]
 
 # https://docs.astral.sh/uv/concepts/projects/dependencies/#optional-dependencies
@@ -21,7 +25,6 @@ dependencies = [
 # https://docs.astral.sh/uv/concepts/projects/dependencies/#default-groups
 [dependency-groups]
 dev = [
-    "pydantic>=2.10.4",
     "pytest>=7.0.0",
     "ruff>=0.8.0",
     # "pytest-asyncio==0.15.1",
@@ -50,7 +53,7 @@ exclude-newer = "2024-12-31T00:00:00Z"
 # https://docs.astral.sh/ruff/configuration/
 [tool.ruff]
 target-version = "py312"
-src = ["scripts", "src", "tests"]
+src = ["src", "tests"]
 
 [tool.ruff.format]
 docstring-code-format = true
@@ -62,6 +65,9 @@ ignore = [
 #    "W503",  # unknown to ruff? Line break before binary operator
 ]
 unfixable = ["B"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
 
 [tool.bumpversion]
 current_version = "0.0.0"
