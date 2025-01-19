@@ -19,17 +19,15 @@ For version history have a look at the [CHANGELOG](CHANGELOG.md).
 
 ## Setup
 
-1. **Install Dependencies**:
-
-- `uv sync`
+`uv sync`
 
 ## Usage
 
-- **CLI Mode**: `uv run src/main.py --cli`
+`uv run src/main.py [--cli]`
 
 ## Testing
 
-Run tests using: `pytest tests/`
+`uv run pytest`
 
 ## Documentation
 
