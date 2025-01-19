@@ -1,6 +1,6 @@
-# <project_name>
+# HybridRAG-eval
 
-<project_description>
+Evaluating classic RAG against HybridRAG. Test hypothesis whether added complexity and compute of HybrdiRAG is offset by better retrieval properties against classic RAG.
 
 ![Version](https://img.shields.io/badge/version-0.0.0-8A2BE2)
 [![CodeFactor](https://www.codefactor.io/repository/github/qte77/HybridRAG-eval/badge)](https://www.codefactor.io/repository/github/qte77/HybridRAG-eval)
@@ -21,15 +21,11 @@ For version history have a look at the [CHANGELOG](CHANGELOG.md).
 
 1. **Install Dependencies**:
 
-- `uv install`
-
-2. **Run the Application**:
-
-- **CLI Mode**: `uv run src/main.py --cli`
+- `uv sync`
 
 ## Usage
 
-- **CLI**: Use the CLI to query models directly from the command line.
+- **CLI Mode**: `uv run src/main.py --cli`
 
 ## Testing
 
@@ -69,7 +65,7 @@ Run tests using: `pytest tests/`
 0. Definitions, Differences
 
     - Embeddings, VectorDB, GraphDB, Knowledge Graph (KG)
-    - RAG, HybridRAG
+    - RAG, HybridRAG, [CAG (Cache-Augmented Generation)](https://arxiv.org/abs/2412.15605)
 
 1. Setup Vector Database(s)
 
@@ -108,11 +104,17 @@ compare_results(rag_results, hybrid_rag_results)
 
 ## Further Reading
 
-- [Optimize AI Model Performance and Maintain Data Privacy with Hybrid RAG](https://developer.nvidia.com/blog/optimize-ai-model-performance-and-maintain-data-privacy-with-hybrid-rag/)
-- [HybridRAG: Combining Knowledge Graphs and Vector Retrieval](https://www.sciphi.ai/blog/hybridrag)
-- [Some Perspectives on HybridRAG in an ArangoDB World (October 8 2024)](https://arangodb.com/2024/10/some-perspectives-on-hybridrag-in-an-arangodb-world/)
+### Papers
+
+- [Don't Do RAG: When Cache-Augmented Generation is All You Need for Knowledge Tasks | 2412](https://arxiv.org/abs/2412.15605)
 - [Domain-Specific Retrieval-Augmented Generation Using Vector Stores, Knowledge Graphs, and Tensor Factorization | 2410](https://arxiv.org/abs/2410.02721)
 - [HybridRAG: Integrating Knowledge Graphs and Vector Retrieval Augmented Generation for Efficient Information Extraction | 2408](https://arxiv.org/abs/2408.04948)
 - [Improving Retrieval Augmented Language Model with Self-Reasonin | 2407](https://arxiv.org/pdf/2407.19813)
 - [Retrieval Augmented Generation or Long-Context LLMs? A Comprehensive Study and Hybrid Approach | 2407](https://www.arxiv.org/pdf/2407.16833)
 - [From Local to Global: A Graph RAG Approach to Query-Focused Summarization | 2404](https://arxiv.org/abs/2404.16130)
+
+### Articles
+
+- [Optimize AI Model Performance and Maintain Data Privacy with Hybrid RAG](https://developer.nvidia.com/blog/optimize-ai-model-performance-and-maintain-data-privacy-with-hybrid-rag/)
+- [HybridRAG: Combining Knowledge Graphs and Vector Retrieval](https://www.sciphi.ai/blog/hybridrag)
+- [Some Perspectives on HybridRAG in an ArangoDB World (October 8 2024)](https://arangodb.com/2024/10/some-perspectives-on-hybridrag-in-an-arangodb-world/)
