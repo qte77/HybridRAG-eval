@@ -17,4 +17,3 @@ Types of changes:
 
 [Unreleased]
 ---
-
